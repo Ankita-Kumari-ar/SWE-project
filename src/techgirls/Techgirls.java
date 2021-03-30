@@ -20,14 +20,14 @@ public class Techgirls {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //insert("Roma", "S","2021F001","Cashier","Roma@123");
-        //insert("Rey", "S","2021F002","Cook","Rey@123");
-        //insert("Tom", "M","2021F003","Waiter","Tom@123");
+        insert("Roma", "S","2021F001","Cashier","Roma@123");
+        insert("Rey", "S","2021F002","Cook","Rey@123");
+        insert("Tom", "M","2021F003","Waiter","Tom@123");
     }
-    /*
+   
     private static void insert(String firstName, String lastName, String empID, String empRole, String password)
     {
-        Connection con= DbConnection.connect();
+        Connection con= DbConnection.connect("EmployeeDataBase.db");
         PreparedStatement ps=null;
 
         try {
@@ -49,5 +49,5 @@ public class Techgirls {
     }
     
 }
-*/
+
     

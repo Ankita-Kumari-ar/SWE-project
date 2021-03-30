@@ -203,19 +203,21 @@ public class Table extends javax.swing.JFrame {
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
+        System.out.println("hi206");
         DefaultTableModel tblModel=(DefaultTableModel)Ttable.getModel();
+        System.out.println("hi207");
         if(Ttable.getSelectedRowCount()==1){
-            
+            System.out.println("hi 208");
             if(!txttableno.getText().equals(""))
             {
                 String tableno=txttableno.getText();
                 String status=(String)txtstatus.getSelectedItem();
                 int id=Integer.parseInt(tblModel.getValueAt(Ttable.getSelectedRow(),0).toString());
-                tblModel.setValueAt(tableno,menutable.getSelectedRow(),1);
-                tblModel.setValueAt(status,menutable.getSelectedRow(),2);
+                tblModel.setValueAt(tableno,Ttable.getSelectedRow(),1);
+                tblModel.setValueAt(status,Ttable.getSelectedRow(),2);
                 String mess=new TableStatus().updateTable(id,tableno,status);
                 System.out.println("mess "+mess);
-            
+                System.out.println("hi");
                 if(mess!="null"){
                     JOptionPane.showMessageDialog(this,mess);
                     
@@ -223,11 +225,11 @@ public class Table extends javax.swing.JFrame {
                 else JOptionPane.showMessageDialog(this,"Some Error Occured, Please Try Again!");
                 txttableno.setText("");
                 //price.setText("");
-                menutable.getSelectionModel().clearSelection();
+                Ttable.getSelectionModel().clearSelection();
             }
         }
         else{
-            if(menutable.getSelectedRowCount()==0){
+            if(Ttable.getSelectedRowCount()==0){
                 JOptionPane.showMessageDialog(this,"Select a row to be updated..");
             }
             else{

@@ -34,18 +34,25 @@ public class TableStatus {
         }
         return mess;
     }
-    static String updateTable(int id, String tableno, String status)
+    static String updateTable(int id, String tno, String sts)
     {
-        Connection con= DbConnection.connect("MenuDataBase.db");
+        Connection con= DbConnection.connect("TableDataBase.db");
         PreparedStatement ps=null;
         String mess=null;
         try {
+            //System.out.println("hi43");
             String sql="UPDATE Tables set tableno=?, status=? WHERE tableId=?";
+            //System.out.println("hi45");
             ps=con.prepareStatement(sql);
-            ps.setString(1, tableno);
-            ps.setString(2, status);
+            //System.out.println("hi47");
+            ps.setString(1, tno);
+            //System.out.println("hi49");
+            ps.setString(2, sts);
+            //System.out.println("hi50");
             ps.setInt(3, id);
+            //System.out.println("hi51");
             ps.execute();
+            //System.out.println("hi52");
             mess="Updated Successfully!";
             //return mess;
            // System.out.println("Data inserted!");

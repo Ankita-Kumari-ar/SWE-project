@@ -19,7 +19,8 @@ public class DbConnection {
         Connection con= null;
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\ankit\\Desktop\\TechGirls\\Entities\\"+s);
+            //con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\ankit\\Desktop\\TechGirls\\Entities\\"+s);
+            con=DriverManager.getConnection("jdbc:sqlite:C:\\swing project\\techgirls\\src\\techgirls\\"+s);
             System.out.println("Connected");
         } catch (ClassNotFoundException | SQLException e) {
             //Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
